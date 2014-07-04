@@ -1,0 +1,2 @@
+class MoonsController < ApplicationController
+end
