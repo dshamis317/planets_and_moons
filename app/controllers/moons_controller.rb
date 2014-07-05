@@ -12,6 +12,9 @@ class MoonsController < ApplicationController
     redirect_to planet_moon_path(planet, new_moon)
   end
 
+  def new
+  end
+
   private
 
   def moon_params
