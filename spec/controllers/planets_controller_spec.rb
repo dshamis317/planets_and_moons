@@ -100,7 +100,7 @@ describe PlanetsController do
       end
 
       it 'redirects to show' do
-        response.should redirect_to planet_path(@andre)
+        response.should redirect_to planet_path(@mars)
       end
 
     end # POST update
