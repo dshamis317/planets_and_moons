@@ -170,7 +170,7 @@ describe MoonsController do
     end
 
     it 'redirects to show' do
-      response.should redirect_to planet_moons_path(@mars, Moon.last)
+      response.should redirect_to planet_moon_path(@mars, Moon.last.id)
     end
 
   end # POST moons create
