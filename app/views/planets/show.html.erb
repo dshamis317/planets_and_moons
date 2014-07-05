@@ -1,0 +1,32 @@
+<h1><%= @planet.name %></h1>
+
+<div class="planet-container">
+
+  <div class="show_img">
+    <img class="profile_img" src='<%= @planet.image_url %>'>
+  </div>
+
+  <div class="info">
+    <h3>Life Present?:</h3><p><%= (@planet.life).to_s.capitalize %></p>
+
+    <div class="moons">
+      <h3>Moons</h3>
+      <ul>
+        <% @planet.moons.each do |moon| %>
+          <li><%= moon.name %></li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="button_show_edit">
+    <a href="/planets/<%= @planet.id %>/edit"><button>Edit <%= @planet.name %></button></a><br>
+  </div>
+  <div class="button_show_home">
+    <a href="/planets"><button>Back to the Mother Ship</button></a>
+  </div>
+</div>
+
