@@ -26,6 +26,11 @@ class PlanetsController < ApplicationController
     redirect_to planet_path(planet)
   end
 
+  def destroy
+    Planet.delete(params[:id])
+    redirect_to planets_path
+  end
+
   private
 
   def planet_params
