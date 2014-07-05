@@ -15,6 +15,23 @@ class MoonsController < ApplicationController
   def new
   end
 
+  def show
+    planet = Planet.find(params[:planet_id])
+    @moon = planet.moons.find(params[:id])
+  end
+
+  def edit
+    planet = Planet.find(params[:planet_id])
+    @moon = planet.moons.find(params[:id])
+  end
+
+  def update
+    planet = Planet.find(params[:planet_id])
+    moon = planet.moons.find(params[:id])
+    moon.update(moon_params)
+    redirect_to planet_moon_path(planet, moon)
+  end
+
   private
 
   def moon_params
