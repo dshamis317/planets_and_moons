@@ -1,3 +1,66 @@
 // Place all the styles related to the planets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table_img {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.alderan {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+}
+
+.alderan:hover {
+  opacity: .8;
+}
+
+.planets {
+  background-color: lightgrey;
+  border: 1px dashed black;
+  text-align: center;
+  width: 1005;
+  margin: 0 auto;
+  font-family: arial;
+}
+
+.planets th {
+  text-decoration: underline;
+  padding: 5px 10px 5px 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.planets td {
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.button {
+  width: 375px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.button_to div input {
+  width: 375px;
+  text-align: center;
+  margin: 0 auto;
+  font-family: arial;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+}
+
+.button_to div input:hover {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border-color: black;
+}

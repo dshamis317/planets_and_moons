@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image:url('http://wallpapersus.com/wp-content/uploads/2012/07/stars-5.jpg');
+  background-size: cover;
+}
+
+h1 {
+  font-family: 'Geostar', cursive;
+  text-align: center;
+  color: white;
+}
+
+button {
+  text-align: center;
+  margin: 0 auto;
+  font-family: arial;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border-color: black;
+}

@@ -1,0 +1,30 @@
+<h1>Planets of the Universe</h1>
+
+<table class="planets">
+  <thead>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Life?</th>
+    <th>Make like Alderan?</th>
+  </thead>
+  <% @planets.each do |planet| %>
+  <tbody>
+    <tr>
+      <td><img class="table_img" src="<%= planet.image_url %>"></td>
+      <td><a href="planets/<%= planet.id %>"><%= planet.name %></td>
+      <td><%= planet.life.to_s.capitalize %></td>
+      <td>
+        <form action="/planets/<%= planet.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <%= token_tag %>
+          <img class='alderan' src='http://static.ddmcdn.com/gif/death-star-5.jpg'>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<div class="button">
+  <%= button_to "Do you know of any other worlds out there?", new_planet_path, :method => :get %>
+</div>
