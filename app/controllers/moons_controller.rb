@@ -32,6 +32,13 @@ class MoonsController < ApplicationController
     redirect_to planet_moon_path(planet, moon)
   end
 
+  def destroy
+    planet = Planet.find(params[:planet_id])
+    moon = planet.moons.find(params[:id])
+    Moon.delete(moon)
+    redirect_to planet_path(planet)
+  end
+
   private
 
   def moon_params
