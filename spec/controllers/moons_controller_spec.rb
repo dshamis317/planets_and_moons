@@ -114,13 +114,65 @@ describe MoonsController do
     describe 'DELETE destroy' do
 
       it 'destroys moon record' do
-        expect {delete :destroy, {:id => @moon.id}, {:planet_id => @mars.id}}
-        .to change(Moon, :count)
+        expect {delete :destroy, :id => @moon.id, :planet_id => @mars.id}
+        .to change(@mars.moons, :count)
         .by(-1)
       end
 
+    end # DELETE moons destroy
+
+  end # Given a moon
+
+  describe 'GET new' do
+
+    before :each do
+      @mars = Planet.new
+      @mars.name = 'Mars'
+      @mars.life = false
+      @mars.image_url = 'http://space-facts.com/wp-content/uploads/mars.jpg'
+      @mars.save
+      get :new, :planet_id => @mars.id
     end
 
-  end
+    it 'responds successfully' do
+      actual = response.code
+      expected = '200'
+      expect(actual).to eq(expected)
+    end
 
-end
+    it 'renders the new template' do
+      expect(response).to render_template('new')
+    end
+
+  end # GET moons new
+
+  describe 'POST create' do
+
+    before :each do
+      @mars = Planet.new
+      @mars.name = 'Mars'
+      @mars.life = false
+      @mars.image_url = 'http://space-facts.com/wp-content/uploads/mars.jpg'
+      @mars.save
+      post :create, :planet_id => @mars.id, :moon => {name: 'New Moon', image_url: 'http://www.newmoon.com'}
+    end
+
+    it 'responds with a redirect' do
+      actual = response.code
+      expected = '302'
+      expect(actual).to eq(expected)
+    end
+
+    it 'inserts a planet record' do
+      actual = Moon.last.name
+      expected = 'New Moon'
+      expect(actual).to eq(expected)
+    end
+
+    it 'redirects to show' do
+      response.should redirect_to planet_moons_path(@mars, Moon.last)
+    end
+
+  end # POST moons create
+
+end # MoonsController
