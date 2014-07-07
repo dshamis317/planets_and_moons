@@ -3,7 +3,7 @@
 <div class="planet-container">
 
   <div class="show_img">
-    <img class="profile_img" src='<%= @planet.image_url %>'>
+    <img class="profile_img" src="<%= @planet.image_url %>">
   </div>
 
   <div class="info">
@@ -26,7 +26,8 @@
     <a href="/planets/<%= @planet.id %>/edit"><button>Edit <%= @planet.name %></button></a><br>
   </div>
   <div class="button_show_home">
-    <a href="/planets"><button>Back to the Mother Ship</button></a>
+    <%= button_to "Back to the Mother Ship", planets_path, :class => "planet_home_button", :method => :get %>
   </div>
 </div>
+
 
