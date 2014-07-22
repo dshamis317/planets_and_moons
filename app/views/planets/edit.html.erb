@@ -1,12 +1,12 @@
-<h1>What else is out in the Cosmos?</h1>
+<h1>Update <%= @planet.name %></h1>
 
-<%= form_for @planet, url: {action: "create"}, html: {class: "new_planet_form"} do |f| %>
+<%= form_for @planet, url: {action: "update"}, html: {class: "edit_planet_form"} do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name, :placeholder => "Name" %>
+  <%= f.text_field :name %>
   <%= f.label "Life:" %>
   <%= f.label "Yes" %>
   <%= f.radio_button :life, "Yes", :value => true %>
   <%= f.label "No" %>
   <%= f.radio_button :life, "No", :value => false %>
-  <%= f.submit "Create" %>
+  <%= f.submit "Update" %>
 <% end %>
