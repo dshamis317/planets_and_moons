@@ -94,6 +94,29 @@
     margin: 10px;
   }
 
+  .moons {
+    width: 400px;
+    height: 285px;
+    font-family: arial;
+    float: left;
+
+    .moon {
+      font-size: 12px;
+      float: left;
+      margin: 5px;
+      text-align: center;
+
+      p {
+        margin: 0;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
 }
 
 .footer {

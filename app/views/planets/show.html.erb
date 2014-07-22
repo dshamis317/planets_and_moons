@@ -10,12 +10,15 @@
     <h3>Life Present?:</h3><p><%= (@planet.life).to_s.capitalize %></p>
 
     <div class="moons">
-      <h3>Moons</h3>
-      <ul>
+      <h3>Moons:</h3>
         <% @planet.moons.each do |moon| %>
-          <li><%= moon.name %></li>
+        <div class="moon">
+          <a href="/planets/<%= @planet.id %>/moons/<%= moon.id %>/edit"><p><%= moon.name %></p></a>
+          <img src="<%= moon.image_url %>">
+          <%= button_to "Delete", planet_moon_path(@planet, moon), :class => "moon_delete_button", :method => :delete %>
+        </div>
         <% end %>
-      </ul>
+    </div>
 
     </div>
   </div>
