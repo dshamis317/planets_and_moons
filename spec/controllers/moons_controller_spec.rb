@@ -105,8 +105,8 @@ describe MoonsController do
         expect(actual).to eq(expected)
       end
 
-      it 'redirects to show' do
-        response.should redirect_to planet_moon_path(@mars, @moon)
+      it 'redirects to planet show' do
+        response.should redirect_to planet_path(@mars)
       end
 
     end # POST moons update
@@ -169,8 +169,8 @@ describe MoonsController do
       expect(actual).to eq(expected)
     end
 
-    it 'redirects to show' do
-      response.should redirect_to planet_moon_path(@mars, Moon.last.id)
+    it 'redirects to planet show' do
+      response.should redirect_to planet_path(@mars)
     end
 
   end # POST moons create
