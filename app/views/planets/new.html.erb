@@ -3,6 +3,8 @@
 <%= form_for @planet, url: {action: "create"}, html: {class: "new_planet_form"} do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, :placeholder => "Name" %>
+  <%= f.label "Image URL" %>
+  <%= f.text_field :image_url, :placeholder => "Image" %>
   <%= f.label "Life:" %>
   <%= f.label "Yes" %>
   <%= f.radio_button :life, "Yes", :value => true %>
