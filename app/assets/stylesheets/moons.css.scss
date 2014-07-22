@@ -1,3 +1,28 @@
 // Place all the styles related to the moons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* moons#new */
+.new_moon_form {
+  font-family: arial;
+  text-align: center;
+  width: 500px;
+  background-color: lightgrey;
+  margin: 0 auto;
+
+  input[name="commit"] {
+    font-family: arial;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    cursor: pointer;
+  }
+
+  input[name="commit"]:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: black;
+  }
+}

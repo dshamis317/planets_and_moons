@@ -23,7 +23,7 @@
 
 <div class="footer">
   <div class="button_show_moon">
-    <%= button_to "Does <%= @planet.name %> have a new moon?", new_planet_moon_path, :class => "planet_new_moon_button", :method => :get %>
+    <a href="/planets/<%= @planet.id %>/moons/new"><button>Does <%= @planet.name %> have a new moon?</button></a>
   </div>
 
   <div class="button_show_edit">
