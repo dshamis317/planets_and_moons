@@ -1,0 +1,7 @@
+<%= form_for [@planet, @moon], html: {class: "moon_form"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :placeholder => "Name" %>
+  <%= f.label "Image URL" %>
+  <%= f.text_field :image_url, :placeholder => "Image" %>
+  <%= f.submit "Create" %>
+<% end %>

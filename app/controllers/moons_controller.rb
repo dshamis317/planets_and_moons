@@ -23,8 +23,8 @@ class MoonsController < ApplicationController
   end
 
   def edit
-    planet = Planet.find(params[:planet_id])
-    @moon = planet.moons.find(params[:id])
+    @planet = Planet.find(params[:planet_id])
+    @moon = @planet.moons.find(params[:id])
   end
 
   def update
