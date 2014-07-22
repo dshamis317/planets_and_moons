@@ -22,9 +22,14 @@
 </div>
 
 <div class="footer">
+  <div class="button_show_moon">
+    <%= button_to "Does <%= @planet.name %> have a new moon?", new_planet_moon_path, :class => "planet_new_moon_button", :method => :get %>
+  </div>
+
   <div class="button_show_edit">
     <a href="/planets/<%= @planet.id %>/edit"><button>Edit <%= @planet.name %></button></a><br>
   </div>
+
   <div class="button_show_home">
     <%= button_to "Back to the Mother Ship", planets_path, :class => "planet_home_button", :method => :get %>
   </div>

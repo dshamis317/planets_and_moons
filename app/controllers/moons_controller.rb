@@ -13,6 +13,7 @@ class MoonsController < ApplicationController
   end
 
   def new
+    @moon = Moon.new
   end
 
   def show
